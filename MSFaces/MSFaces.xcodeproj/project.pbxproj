@@ -9,12 +9,69 @@
 /* Begin PBXBuildFile section */
 		9BF60A8C1DA21F1F007770E6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF60A8B1DA21F1F007770E6 /* main.m */; };
 		9BF60A8F1DA21F1F007770E6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF60A8E1DA21F1F007770E6 /* AppDelegate.m */; };
-		9BF60A921DA21F1F007770E6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF60A911DA21F1F007770E6 /* ViewController.m */; };
+		9BF60A921DA21F1F007770E6 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF60A911DA21F1F007770E6 /* HomeViewController.m */; };
 		9BF60A951DA21F1F007770E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BF60A931DA21F1F007770E6 /* Main.storyboard */; };
 		9BF60A971DA21F1F007770E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BF60A961DA21F1F007770E6 /* Assets.xcassets */; };
 		9BF60A9A1DA21F1F007770E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BF60A981DA21F1F007770E6 /* LaunchScreen.storyboard */; };
 		9BF60AA51DA21F1F007770E6 /* MSFacesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF60AA41DA21F1F007770E6 /* MSFacesTests.m */; };
 		9BF60AB01DA21F1F007770E6 /* MSFacesUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF60AAF1DA21F1F007770E6 /* MSFacesUITests.m */; };
+		9BF60B281DA24460007770E6 /* sticker_close.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BF60B1A1DA24460007770E6 /* sticker_close.png */; };
+		9BF60B291DA24460007770E6 /* sticker_close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BF60B1B1DA24460007770E6 /* sticker_close@2x.png */; };
+		9BF60B2A1DA24460007770E6 /* sticker_close@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BF60B1C1DA24460007770E6 /* sticker_close@3x.png */; };
+		9BF60B2B1DA24460007770E6 /* sticker_resize.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BF60B1D1DA24460007770E6 /* sticker_resize.png */; };
+		9BF60B2C1DA24460007770E6 /* sticker_resize@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BF60B1E1DA24460007770E6 /* sticker_resize@2x.png */; };
+		9BF60B2D1DA24460007770E6 /* sticker_resize@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BF60B1F1DA24460007770E6 /* sticker_resize@3x.png */; };
+		9BF60B2E1DA24460007770E6 /* ACEDrawingLabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF60B211DA24460007770E6 /* ACEDrawingLabelView.m */; };
+		9BF60B2F1DA24460007770E6 /* ACEDrawingTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF60B231DA24460007770E6 /* ACEDrawingTools.m */; };
+		9BF60B301DA24460007770E6 /* ACEDrawingToolState.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF60B251DA24460007770E6 /* ACEDrawingToolState.m */; };
+		9BF60B311DA24460007770E6 /* ACEDrawingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF60B271DA24460007770E6 /* ACEDrawingView.m */; };
+		9BF60B341DA24FB5007770E6 /* DrawViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF60B331DA24FB5007770E6 /* DrawViewController.m */; };
+		9BF60B361DA250B1007770E6 /* ACEDraggableText.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9BF60B351DA250B1007770E6 /* ACEDraggableText.bundle */; };
+		9BF60B3B1DA342E3007770E6 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9BF60B381DA342E3007770E6 /* Info.plist */; };
+		9BF60B3C1DA342E3007770E6 /* MZTimerLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF60B3A1DA342E3007770E6 /* MZTimerLabel.m */; };
+		9BF60B3F1DA343A9007770E6 /* QuizViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF60B3E1DA343A9007770E6 /* QuizViewController.m */; };
+		9BF60B421DA343B5007770E6 /* RankViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF60B411DA343B5007770E6 /* RankViewController.m */; };
+		9BF60B451DA343C2007770E6 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF60B441DA343C2007770E6 /* ProfileViewController.m */; };
+		9BF60B611DA37949007770E6 /* segmdl2.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9BF60B471DA37949007770E6 /* segmdl2.ttf */; };
+		9BF60B621DA37949007770E6 /* segoepr.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9BF60B481DA37949007770E6 /* segoepr.ttf */; };
+		9BF60B631DA37949007770E6 /* segoeprb.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9BF60B491DA37949007770E6 /* segoeprb.ttf */; };
+		9BF60B641DA37949007770E6 /* segoesc.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9BF60B4A1DA37949007770E6 /* segoesc.ttf */; };
+		9BF60B651DA37949007770E6 /* segoescb.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9BF60B4B1DA37949007770E6 /* segoescb.ttf */; };
+		9BF60B661DA37949007770E6 /* segoeui.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9BF60B4C1DA37949007770E6 /* segoeui.ttf */; };
+		9BF60B671DA37949007770E6 /* segoeuib.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9BF60B4D1DA37949007770E6 /* segoeuib.ttf */; };
+		9BF60B681DA37949007770E6 /* segoeuii.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9BF60B4E1DA37949007770E6 /* segoeuii.ttf */; };
+		9BF60B691DA37949007770E6 /* segoeuil.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9BF60B4F1DA37949007770E6 /* segoeuil.ttf */; };
+		9BF60B6A1DA37949007770E6 /* segoeuisl.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9BF60B501DA37949007770E6 /* segoeuisl.ttf */; };
+		9BF60B6B1DA37949007770E6 /* segoeuiz.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9BF60B511DA37949007770E6 /* segoeuiz.ttf */; };
+		9BF60B6C1DA37949007770E6 /* SegoeWP-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9BF60B521DA37949007770E6 /* SegoeWP-Black.ttf */; };
+		9BF60B6D1DA37949007770E6 /* SegoeWP-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9BF60B531DA37949007770E6 /* SegoeWP-Bold.ttf */; };
+		9BF60B6E1DA37949007770E6 /* SegoeWP-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9BF60B541DA37949007770E6 /* SegoeWP-Light.ttf */; };
+		9BF60B6F1DA37949007770E6 /* SegoeWP-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9BF60B551DA37949007770E6 /* SegoeWP-Semibold.ttf */; };
+		9BF60B701DA37949007770E6 /* SegoeWP-Semilight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9BF60B561DA37949007770E6 /* SegoeWP-Semilight.ttf */; };
+		9BF60B711DA37949007770E6 /* SegoeWP.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9BF60B571DA37949007770E6 /* SegoeWP.ttf */; };
+		9BF60B721DA37949007770E6 /* seguibl.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9BF60B581DA37949007770E6 /* seguibl.ttf */; };
+		9BF60B731DA37949007770E6 /* seguibli.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9BF60B591DA37949007770E6 /* seguibli.ttf */; };
+		9BF60B741DA37949007770E6 /* seguiemj.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9BF60B5A1DA37949007770E6 /* seguiemj.ttf */; };
+		9BF60B751DA37949007770E6 /* seguihis.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9BF60B5B1DA37949007770E6 /* seguihis.ttf */; };
+		9BF60B761DA37949007770E6 /* seguili.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9BF60B5C1DA37949007770E6 /* seguili.ttf */; };
+		9BF60B771DA37949007770E6 /* seguisb.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9BF60B5D1DA37949007770E6 /* seguisb.ttf */; };
+		9BF60B781DA37949007770E6 /* seguisbi.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9BF60B5E1DA37949007770E6 /* seguisbi.ttf */; };
+		9BF60B791DA37949007770E6 /* seguisli.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9BF60B5F1DA37949007770E6 /* seguisli.ttf */; };
+		9BF60B7A1DA37949007770E6 /* seguisym.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9BF60B601DA37949007770E6 /* seguisym.ttf */; };
+		9BF60BA51DA3ACB7007770E6 /* ResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF60BA41DA3ACB7007770E6 /* ResultViewController.m */; };
+		9BF60BAD1DA3AE9A007770E6 /* BEMAnimationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF60BA81DA3AE9A007770E6 /* BEMAnimationManager.m */; };
+		9BF60BAE1DA3AE9A007770E6 /* BEMCheckBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF60BAA1DA3AE9A007770E6 /* BEMCheckBox.m */; };
+		9BF60BAF1DA3AE9A007770E6 /* BEMPathManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF60BAC1DA3AE9A007770E6 /* BEMPathManager.m */; };
+		9BF60BB21DA48F3E007770E6 /* ProfileCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF60BB11DA48F3E007770E6 /* ProfileCollectionViewCell.m */; };
+		9BF60BB51DA49A68007770E6 /* RankCollectionViewDrawCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF60BB41DA49A68007770E6 /* RankCollectionViewDrawCell.m */; };
+		9BF60BB81DA49D5D007770E6 /* RankCollectionViewGuessCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF60BB71DA49D5D007770E6 /* RankCollectionViewGuessCell.m */; };
+		9BF60BDE1DA4A54E007770E6 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BF60BDD1DA4A54E007770E6 /* QuartzCore.framework */; };
+		9BF60BE01DA4A552007770E6 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BF60BDF1DA4A552007770E6 /* CoreVideo.framework */; };
+		9BF60BE21DA4A556007770E6 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BF60BE11DA4A556007770E6 /* CoreMedia.framework */; };
+		9BF60BE41DA4A55C007770E6 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BF60BE31DA4A55C007770E6 /* AVFoundation.framework */; };
+		9BF60BE61DA4A5D9007770E6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BF60BE51DA4A5D9007770E6 /* UIKit.framework */; };
+		9BF60BE81DA4A5DF007770E6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BF60BE71DA4A5DF007770E6 /* Foundation.framework */; };
+		9BF60BEC1DA4A76B007770E6 /* ASScreenRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF60BEB1DA4A76B007770E6 /* ASScreenRecorder.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +96,8 @@
 		9BF60A8B1DA21F1F007770E6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9BF60A8D1DA21F1F007770E6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9BF60A8E1DA21F1F007770E6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		9BF60A901DA21F1F007770E6 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		9BF60A911DA21F1F007770E6 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		9BF60A901DA21F1F007770E6 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		9BF60A911DA21F1F007770E6 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		9BF60A941DA21F1F007770E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9BF60A961DA21F1F007770E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9BF60A991DA21F1F007770E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +108,80 @@
 		9BF60AAB1DA21F1F007770E6 /* MSFacesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MSFacesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BF60AAF1DA21F1F007770E6 /* MSFacesUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSFacesUITests.m; sourceTree = "<group>"; };
 		9BF60AB11DA21F1F007770E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9BF60B1A1DA24460007770E6 /* sticker_close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sticker_close.png; sourceTree = "<group>"; };
+		9BF60B1B1DA24460007770E6 /* sticker_close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker_close@2x.png"; sourceTree = "<group>"; };
+		9BF60B1C1DA24460007770E6 /* sticker_close@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker_close@3x.png"; sourceTree = "<group>"; };
+		9BF60B1D1DA24460007770E6 /* sticker_resize.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sticker_resize.png; sourceTree = "<group>"; };
+		9BF60B1E1DA24460007770E6 /* sticker_resize@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker_resize@2x.png"; sourceTree = "<group>"; };
+		9BF60B1F1DA24460007770E6 /* sticker_resize@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker_resize@3x.png"; sourceTree = "<group>"; };
+		9BF60B201DA24460007770E6 /* ACEDrawingLabelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACEDrawingLabelView.h; sourceTree = "<group>"; };
+		9BF60B211DA24460007770E6 /* ACEDrawingLabelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACEDrawingLabelView.m; sourceTree = "<group>"; };
+		9BF60B221DA24460007770E6 /* ACEDrawingTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACEDrawingTools.h; sourceTree = "<group>"; };
+		9BF60B231DA24460007770E6 /* ACEDrawingTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACEDrawingTools.m; sourceTree = "<group>"; };
+		9BF60B241DA24460007770E6 /* ACEDrawingToolState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACEDrawingToolState.h; sourceTree = "<group>"; };
+		9BF60B251DA24460007770E6 /* ACEDrawingToolState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACEDrawingToolState.m; sourceTree = "<group>"; };
+		9BF60B261DA24460007770E6 /* ACEDrawingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACEDrawingView.h; sourceTree = "<group>"; };
+		9BF60B271DA24460007770E6 /* ACEDrawingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACEDrawingView.m; sourceTree = "<group>"; };
+		9BF60B321DA24FB5007770E6 /* DrawViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawViewController.h; sourceTree = "<group>"; };
+		9BF60B331DA24FB5007770E6 /* DrawViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawViewController.m; sourceTree = "<group>"; };
+		9BF60B351DA250B1007770E6 /* ACEDraggableText.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ACEDraggableText.bundle; sourceTree = "<group>"; };
+		9BF60B381DA342E3007770E6 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9BF60B391DA342E3007770E6 /* MZTimerLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZTimerLabel.h; sourceTree = "<group>"; };
+		9BF60B3A1DA342E3007770E6 /* MZTimerLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZTimerLabel.m; sourceTree = "<group>"; };
+		9BF60B3D1DA343A9007770E6 /* QuizViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuizViewController.h; sourceTree = "<group>"; };
+		9BF60B3E1DA343A9007770E6 /* QuizViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuizViewController.m; sourceTree = "<group>"; };
+		9BF60B401DA343B5007770E6 /* RankViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RankViewController.h; sourceTree = "<group>"; };
+		9BF60B411DA343B5007770E6 /* RankViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RankViewController.m; sourceTree = "<group>"; };
+		9BF60B431DA343C2007770E6 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		9BF60B441DA343C2007770E6 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		9BF60B471DA37949007770E6 /* segmdl2.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = segmdl2.ttf; sourceTree = "<group>"; };
+		9BF60B481DA37949007770E6 /* segoepr.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = segoepr.ttf; sourceTree = "<group>"; };
+		9BF60B491DA37949007770E6 /* segoeprb.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = segoeprb.ttf; sourceTree = "<group>"; };
+		9BF60B4A1DA37949007770E6 /* segoesc.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = segoesc.ttf; sourceTree = "<group>"; };
+		9BF60B4B1DA37949007770E6 /* segoescb.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = segoescb.ttf; sourceTree = "<group>"; };
+		9BF60B4C1DA37949007770E6 /* segoeui.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = segoeui.ttf; sourceTree = "<group>"; };
+		9BF60B4D1DA37949007770E6 /* segoeuib.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = segoeuib.ttf; sourceTree = "<group>"; };
+		9BF60B4E1DA37949007770E6 /* segoeuii.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = segoeuii.ttf; sourceTree = "<group>"; };
+		9BF60B4F1DA37949007770E6 /* segoeuil.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = segoeuil.ttf; sourceTree = "<group>"; };
+		9BF60B501DA37949007770E6 /* segoeuisl.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = segoeuisl.ttf; sourceTree = "<group>"; };
+		9BF60B511DA37949007770E6 /* segoeuiz.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = segoeuiz.ttf; sourceTree = "<group>"; };
+		9BF60B521DA37949007770E6 /* SegoeWP-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SegoeWP-Black.ttf"; sourceTree = "<group>"; };
+		9BF60B531DA37949007770E6 /* SegoeWP-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SegoeWP-Bold.ttf"; sourceTree = "<group>"; };
+		9BF60B541DA37949007770E6 /* SegoeWP-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SegoeWP-Light.ttf"; sourceTree = "<group>"; };
+		9BF60B551DA37949007770E6 /* SegoeWP-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SegoeWP-Semibold.ttf"; sourceTree = "<group>"; };
+		9BF60B561DA37949007770E6 /* SegoeWP-Semilight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SegoeWP-Semilight.ttf"; sourceTree = "<group>"; };
+		9BF60B571DA37949007770E6 /* SegoeWP.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SegoeWP.ttf; sourceTree = "<group>"; };
+		9BF60B581DA37949007770E6 /* seguibl.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = seguibl.ttf; sourceTree = "<group>"; };
+		9BF60B591DA37949007770E6 /* seguibli.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = seguibli.ttf; sourceTree = "<group>"; };
+		9BF60B5A1DA37949007770E6 /* seguiemj.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = seguiemj.ttf; sourceTree = "<group>"; };
+		9BF60B5B1DA37949007770E6 /* seguihis.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = seguihis.ttf; sourceTree = "<group>"; };
+		9BF60B5C1DA37949007770E6 /* seguili.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = seguili.ttf; sourceTree = "<group>"; };
+		9BF60B5D1DA37949007770E6 /* seguisb.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = seguisb.ttf; sourceTree = "<group>"; };
+		9BF60B5E1DA37949007770E6 /* seguisbi.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = seguisbi.ttf; sourceTree = "<group>"; };
+		9BF60B5F1DA37949007770E6 /* seguisli.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = seguisli.ttf; sourceTree = "<group>"; };
+		9BF60B601DA37949007770E6 /* seguisym.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = seguisym.ttf; sourceTree = "<group>"; };
+		9BF60BA31DA3ACB7007770E6 /* ResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultViewController.h; sourceTree = "<group>"; };
+		9BF60BA41DA3ACB7007770E6 /* ResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultViewController.m; sourceTree = "<group>"; };
+		9BF60BA71DA3AE9A007770E6 /* BEMAnimationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEMAnimationManager.h; sourceTree = "<group>"; };
+		9BF60BA81DA3AE9A007770E6 /* BEMAnimationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEMAnimationManager.m; sourceTree = "<group>"; };
+		9BF60BA91DA3AE9A007770E6 /* BEMCheckBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEMCheckBox.h; sourceTree = "<group>"; };
+		9BF60BAA1DA3AE9A007770E6 /* BEMCheckBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEMCheckBox.m; sourceTree = "<group>"; };
+		9BF60BAB1DA3AE9A007770E6 /* BEMPathManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEMPathManager.h; sourceTree = "<group>"; };
+		9BF60BAC1DA3AE9A007770E6 /* BEMPathManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEMPathManager.m; sourceTree = "<group>"; };
+		9BF60BB01DA48F3E007770E6 /* ProfileCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileCollectionViewCell.h; sourceTree = "<group>"; };
+		9BF60BB11DA48F3E007770E6 /* ProfileCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileCollectionViewCell.m; sourceTree = "<group>"; };
+		9BF60BB31DA49A68007770E6 /* RankCollectionViewDrawCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RankCollectionViewDrawCell.h; sourceTree = "<group>"; };
+		9BF60BB41DA49A68007770E6 /* RankCollectionViewDrawCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RankCollectionViewDrawCell.m; sourceTree = "<group>"; };
+		9BF60BB61DA49D5D007770E6 /* RankCollectionViewGuessCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RankCollectionViewGuessCell.h; sourceTree = "<group>"; };
+		9BF60BB71DA49D5D007770E6 /* RankCollectionViewGuessCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RankCollectionViewGuessCell.m; sourceTree = "<group>"; };
+		9BF60BDD1DA4A54E007770E6 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		9BF60BDF1DA4A552007770E6 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		9BF60BE11DA4A556007770E6 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		9BF60BE31DA4A55C007770E6 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		9BF60BE51DA4A5D9007770E6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		9BF60BE71DA4A5DF007770E6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		9BF60BEA1DA4A76B007770E6 /* ASScreenRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASScreenRecorder.h; sourceTree = "<group>"; };
+		9BF60BEB1DA4A76B007770E6 /* ASScreenRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASScreenRecorder.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +189,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BF60BE81DA4A5DF007770E6 /* Foundation.framework in Frameworks */,
+				9BF60BE61DA4A5D9007770E6 /* UIKit.framework in Frameworks */,
+				9BF60BE41DA4A55C007770E6 /* AVFoundation.framework in Frameworks */,
+				9BF60BE21DA4A556007770E6 /* CoreMedia.framework in Frameworks */,
+				9BF60BE01DA4A552007770E6 /* CoreVideo.framework in Frameworks */,
+				9BF60BDE1DA4A54E007770E6 /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +222,7 @@
 				9BF60AA31DA21F1F007770E6 /* MSFacesTests */,
 				9BF60AAE1DA21F1F007770E6 /* MSFacesUITests */,
 				9BF60A881DA21F1F007770E6 /* Products */,
+				9BF60BDC1DA4A54D007770E6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,10 +241,26 @@
 			children = (
 				9BF60A8D1DA21F1F007770E6 /* AppDelegate.h */,
 				9BF60A8E1DA21F1F007770E6 /* AppDelegate.m */,
-				9BF60A901DA21F1F007770E6 /* ViewController.h */,
-				9BF60A911DA21F1F007770E6 /* ViewController.m */,
-				9BF60A931DA21F1F007770E6 /* Main.storyboard */,
+				9BF60A901DA21F1F007770E6 /* HomeViewController.h */,
+				9BF60A911DA21F1F007770E6 /* HomeViewController.m */,
+				9BF60B321DA24FB5007770E6 /* DrawViewController.h */,
+				9BF60B331DA24FB5007770E6 /* DrawViewController.m */,
+				9BF60B3D1DA343A9007770E6 /* QuizViewController.h */,
+				9BF60B3E1DA343A9007770E6 /* QuizViewController.m */,
+				9BF60B401DA343B5007770E6 /* RankViewController.h */,
+				9BF60B411DA343B5007770E6 /* RankViewController.m */,
+				9BF60B431DA343C2007770E6 /* ProfileViewController.h */,
+				9BF60B441DA343C2007770E6 /* ProfileViewController.m */,
+				9BF60BA31DA3ACB7007770E6 /* ResultViewController.h */,
+				9BF60BA41DA3ACB7007770E6 /* ResultViewController.m */,
+				9BF60BB31DA49A68007770E6 /* RankCollectionViewDrawCell.h */,
+				9BF60BB41DA49A68007770E6 /* RankCollectionViewDrawCell.m */,
+				9BF60BB61DA49D5D007770E6 /* RankCollectionViewGuessCell.h */,
+				9BF60BB71DA49D5D007770E6 /* RankCollectionViewGuessCell.m */,
+				9BF60BB01DA48F3E007770E6 /* ProfileCollectionViewCell.h */,
+				9BF60BB11DA48F3E007770E6 /* ProfileCollectionViewCell.m */,
 				9BF60A961DA21F1F007770E6 /* Assets.xcassets */,
+				9BF60A931DA21F1F007770E6 /* Main.storyboard */,
 				9BF60A981DA21F1F007770E6 /* LaunchScreen.storyboard */,
 				9BF60A9B1DA21F1F007770E6 /* Info.plist */,
 				9BF60A8A1DA21F1F007770E6 /* Supporting Files */,
@@ -117,6 +271,12 @@
 		9BF60A8A1DA21F1F007770E6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9BF60BE91DA4A76B007770E6 /* ASScreenRecorder */,
+				9BF60BA61DA3AE9A007770E6 /* Classes */,
+				9BF60B461DA37949007770E6 /* SegoeFontFamily */,
+				9BF60B371DA342E3007770E6 /* MZTimerLabel */,
+				9BF60B351DA250B1007770E6 /* ACEDraggableText.bundle */,
+				9BF60B181DA24460007770E6 /* ACEDrawingView */,
 				9BF60A8B1DA21F1F007770E6 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -138,6 +298,113 @@
 				9BF60AB11DA21F1F007770E6 /* Info.plist */,
 			);
 			path = MSFacesUITests;
+			sourceTree = "<group>";
+		};
+		9BF60B181DA24460007770E6 /* ACEDrawingView */ = {
+			isa = PBXGroup;
+			children = (
+				9BF60B191DA24460007770E6 /* ACEDraggableText */,
+				9BF60B201DA24460007770E6 /* ACEDrawingLabelView.h */,
+				9BF60B211DA24460007770E6 /* ACEDrawingLabelView.m */,
+				9BF60B221DA24460007770E6 /* ACEDrawingTools.h */,
+				9BF60B231DA24460007770E6 /* ACEDrawingTools.m */,
+				9BF60B241DA24460007770E6 /* ACEDrawingToolState.h */,
+				9BF60B251DA24460007770E6 /* ACEDrawingToolState.m */,
+				9BF60B261DA24460007770E6 /* ACEDrawingView.h */,
+				9BF60B271DA24460007770E6 /* ACEDrawingView.m */,
+			);
+			path = ACEDrawingView;
+			sourceTree = "<group>";
+		};
+		9BF60B191DA24460007770E6 /* ACEDraggableText */ = {
+			isa = PBXGroup;
+			children = (
+				9BF60B1A1DA24460007770E6 /* sticker_close.png */,
+				9BF60B1B1DA24460007770E6 /* sticker_close@2x.png */,
+				9BF60B1C1DA24460007770E6 /* sticker_close@3x.png */,
+				9BF60B1D1DA24460007770E6 /* sticker_resize.png */,
+				9BF60B1E1DA24460007770E6 /* sticker_resize@2x.png */,
+				9BF60B1F1DA24460007770E6 /* sticker_resize@3x.png */,
+			);
+			path = ACEDraggableText;
+			sourceTree = "<group>";
+		};
+		9BF60B371DA342E3007770E6 /* MZTimerLabel */ = {
+			isa = PBXGroup;
+			children = (
+				9BF60B381DA342E3007770E6 /* Info.plist */,
+				9BF60B391DA342E3007770E6 /* MZTimerLabel.h */,
+				9BF60B3A1DA342E3007770E6 /* MZTimerLabel.m */,
+			);
+			path = MZTimerLabel;
+			sourceTree = "<group>";
+		};
+		9BF60B461DA37949007770E6 /* SegoeFontFamily */ = {
+			isa = PBXGroup;
+			children = (
+				9BF60B471DA37949007770E6 /* segmdl2.ttf */,
+				9BF60B481DA37949007770E6 /* segoepr.ttf */,
+				9BF60B491DA37949007770E6 /* segoeprb.ttf */,
+				9BF60B4A1DA37949007770E6 /* segoesc.ttf */,
+				9BF60B4B1DA37949007770E6 /* segoescb.ttf */,
+				9BF60B4C1DA37949007770E6 /* segoeui.ttf */,
+				9BF60B4D1DA37949007770E6 /* segoeuib.ttf */,
+				9BF60B4E1DA37949007770E6 /* segoeuii.ttf */,
+				9BF60B4F1DA37949007770E6 /* segoeuil.ttf */,
+				9BF60B501DA37949007770E6 /* segoeuisl.ttf */,
+				9BF60B511DA37949007770E6 /* segoeuiz.ttf */,
+				9BF60B521DA37949007770E6 /* SegoeWP-Black.ttf */,
+				9BF60B531DA37949007770E6 /* SegoeWP-Bold.ttf */,
+				9BF60B541DA37949007770E6 /* SegoeWP-Light.ttf */,
+				9BF60B551DA37949007770E6 /* SegoeWP-Semibold.ttf */,
+				9BF60B561DA37949007770E6 /* SegoeWP-Semilight.ttf */,
+				9BF60B571DA37949007770E6 /* SegoeWP.ttf */,
+				9BF60B581DA37949007770E6 /* seguibl.ttf */,
+				9BF60B591DA37949007770E6 /* seguibli.ttf */,
+				9BF60B5A1DA37949007770E6 /* seguiemj.ttf */,
+				9BF60B5B1DA37949007770E6 /* seguihis.ttf */,
+				9BF60B5C1DA37949007770E6 /* seguili.ttf */,
+				9BF60B5D1DA37949007770E6 /* seguisb.ttf */,
+				9BF60B5E1DA37949007770E6 /* seguisbi.ttf */,
+				9BF60B5F1DA37949007770E6 /* seguisli.ttf */,
+				9BF60B601DA37949007770E6 /* seguisym.ttf */,
+			);
+			path = SegoeFontFamily;
+			sourceTree = "<group>";
+		};
+		9BF60BA61DA3AE9A007770E6 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				9BF60BA71DA3AE9A007770E6 /* BEMAnimationManager.h */,
+				9BF60BA81DA3AE9A007770E6 /* BEMAnimationManager.m */,
+				9BF60BA91DA3AE9A007770E6 /* BEMCheckBox.h */,
+				9BF60BAA1DA3AE9A007770E6 /* BEMCheckBox.m */,
+				9BF60BAB1DA3AE9A007770E6 /* BEMPathManager.h */,
+				9BF60BAC1DA3AE9A007770E6 /* BEMPathManager.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		9BF60BDC1DA4A54D007770E6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9BF60BE71DA4A5DF007770E6 /* Foundation.framework */,
+				9BF60BE51DA4A5D9007770E6 /* UIKit.framework */,
+				9BF60BE31DA4A55C007770E6 /* AVFoundation.framework */,
+				9BF60BE11DA4A556007770E6 /* CoreMedia.framework */,
+				9BF60BDF1DA4A552007770E6 /* CoreVideo.framework */,
+				9BF60BDD1DA4A54E007770E6 /* QuartzCore.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9BF60BE91DA4A76B007770E6 /* ASScreenRecorder */ = {
+			isa = PBXGroup;
+			children = (
+				9BF60BEA1DA4A76B007770E6 /* ASScreenRecorder.h */,
+				9BF60BEB1DA4A76B007770E6 /* ASScreenRecorder.m */,
+			);
+			path = ASScreenRecorder;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,15 +474,19 @@
 				TargetAttributes = {
 					9BF60A861DA21F1F007770E6 = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = L3EALB2AMW;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
 					9BF60A9F1DA21F1F007770E6 = {
 						CreatedOnToolsVersion = 8.0;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 9BF60A861DA21F1F007770E6;
 					};
 					9BF60AAA1DA21F1F007770E6 = {
 						CreatedOnToolsVersion = 8.0;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 9BF60A861DA21F1F007770E6;
 					};
@@ -246,9 +517,43 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BF60B291DA24460007770E6 /* sticker_close@2x.png in Resources */,
+				9BF60B6B1DA37949007770E6 /* segoeuiz.ttf in Resources */,
+				9BF60B631DA37949007770E6 /* segoeprb.ttf in Resources */,
+				9BF60B701DA37949007770E6 /* SegoeWP-Semilight.ttf in Resources */,
+				9BF60B641DA37949007770E6 /* segoesc.ttf in Resources */,
+				9BF60B7A1DA37949007770E6 /* seguisym.ttf in Resources */,
+				9BF60B741DA37949007770E6 /* seguiemj.ttf in Resources */,
+				9BF60B6D1DA37949007770E6 /* SegoeWP-Bold.ttf in Resources */,
+				9BF60B761DA37949007770E6 /* seguili.ttf in Resources */,
+				9BF60B721DA37949007770E6 /* seguibl.ttf in Resources */,
+				9BF60B651DA37949007770E6 /* segoescb.ttf in Resources */,
+				9BF60B751DA37949007770E6 /* seguihis.ttf in Resources */,
 				9BF60A9A1DA21F1F007770E6 /* LaunchScreen.storyboard in Resources */,
+				9BF60B6C1DA37949007770E6 /* SegoeWP-Black.ttf in Resources */,
+				9BF60B2C1DA24460007770E6 /* sticker_resize@2x.png in Resources */,
+				9BF60B621DA37949007770E6 /* segoepr.ttf in Resources */,
+				9BF60B781DA37949007770E6 /* seguisbi.ttf in Resources */,
+				9BF60B2B1DA24460007770E6 /* sticker_resize.png in Resources */,
+				9BF60B361DA250B1007770E6 /* ACEDraggableText.bundle in Resources */,
+				9BF60B611DA37949007770E6 /* segmdl2.ttf in Resources */,
+				9BF60B2D1DA24460007770E6 /* sticker_resize@3x.png in Resources */,
+				9BF60B771DA37949007770E6 /* seguisb.ttf in Resources */,
+				9BF60B661DA37949007770E6 /* segoeui.ttf in Resources */,
 				9BF60A971DA21F1F007770E6 /* Assets.xcassets in Resources */,
+				9BF60B681DA37949007770E6 /* segoeuii.ttf in Resources */,
+				9BF60B2A1DA24460007770E6 /* sticker_close@3x.png in Resources */,
+				9BF60B731DA37949007770E6 /* seguibli.ttf in Resources */,
+				9BF60B3B1DA342E3007770E6 /* Info.plist in Resources */,
+				9BF60B6E1DA37949007770E6 /* SegoeWP-Light.ttf in Resources */,
+				9BF60B671DA37949007770E6 /* segoeuib.ttf in Resources */,
+				9BF60B791DA37949007770E6 /* seguisli.ttf in Resources */,
+				9BF60B691DA37949007770E6 /* segoeuil.ttf in Resources */,
+				9BF60B6A1DA37949007770E6 /* segoeuisl.ttf in Resources */,
 				9BF60A951DA21F1F007770E6 /* Main.storyboard in Resources */,
+				9BF60B711DA37949007770E6 /* SegoeWP.ttf in Resources */,
+				9BF60B6F1DA37949007770E6 /* SegoeWP-Semibold.ttf in Resources */,
+				9BF60B281DA24460007770E6 /* sticker_close.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,9 +578,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9BF60A921DA21F1F007770E6 /* ViewController.m in Sources */,
+				9BF60B421DA343B5007770E6 /* RankViewController.m in Sources */,
+				9BF60B2E1DA24460007770E6 /* ACEDrawingLabelView.m in Sources */,
+				9BF60B311DA24460007770E6 /* ACEDrawingView.m in Sources */,
+				9BF60B451DA343C2007770E6 /* ProfileViewController.m in Sources */,
+				9BF60A921DA21F1F007770E6 /* HomeViewController.m in Sources */,
+				9BF60B3C1DA342E3007770E6 /* MZTimerLabel.m in Sources */,
+				9BF60BAE1DA3AE9A007770E6 /* BEMCheckBox.m in Sources */,
+				9BF60B2F1DA24460007770E6 /* ACEDrawingTools.m in Sources */,
+				9BF60BA51DA3ACB7007770E6 /* ResultViewController.m in Sources */,
+				9BF60BB81DA49D5D007770E6 /* RankCollectionViewGuessCell.m in Sources */,
+				9BF60B301DA24460007770E6 /* ACEDrawingToolState.m in Sources */,
+				9BF60BEC1DA4A76B007770E6 /* ASScreenRecorder.m in Sources */,
+				9BF60B341DA24FB5007770E6 /* DrawViewController.m in Sources */,
+				9BF60BAF1DA3AE9A007770E6 /* BEMPathManager.m in Sources */,
+				9BF60BB21DA48F3E007770E6 /* ProfileCollectionViewCell.m in Sources */,
 				9BF60A8F1DA21F1F007770E6 /* AppDelegate.m in Sources */,
 				9BF60A8C1DA21F1F007770E6 /* main.m in Sources */,
+				9BF60B3F1DA343A9007770E6 /* QuizViewController.m in Sources */,
+				9BF60BB51DA49A68007770E6 /* RankCollectionViewDrawCell.m in Sources */,
+				9BF60BAD1DA3AE9A007770E6 /* BEMAnimationManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,10 +746,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = L3EALB2AMW;
 				INFOPLIST_FILE = MSFaces/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Microsoft.MSFaces;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -435,10 +759,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = L3EALB2AMW;
 				INFOPLIST_FILE = MSFaces/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Microsoft.MSFaces;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -450,6 +776,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Microsoft.MSFacesTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MSFaces.app/MSFaces";
 			};
 			name = Debug;
@@ -462,6 +789,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Microsoft.MSFacesTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MSFaces.app/MSFaces";
 			};
 			name = Release;
@@ -473,6 +801,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Microsoft.MSFacesUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = MSFaces;
 			};
 			name = Debug;
@@ -484,6 +813,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Microsoft.MSFacesUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = MSFaces;
 			};
 			name = Release;
@@ -507,6 +837,7 @@
 				9BF60AB61DA21F1F007770E6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9BF60AB71DA21F1F007770E6 /* Build configuration list for PBXNativeTarget "MSFacesTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +846,7 @@
 				9BF60AB91DA21F1F007770E6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9BF60ABA1DA21F1F007770E6 /* Build configuration list for PBXNativeTarget "MSFacesUITests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +855,7 @@
 				9BF60ABC1DA21F1F007770E6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

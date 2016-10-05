@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  DrawViewController.h
 //  MSFaces
 //
 //  Created by Lee on 10/3/16.
@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface DrawViewController : UIViewController
 
+@property (copy) UIImage *profileImage;
 
 @end
-
