@@ -42,6 +42,7 @@ Get an image to draw for.
 		"path": <string>
 	}
 }
+```
 
 ### POST /draw?u=t-dawei
 Post a drawing.
