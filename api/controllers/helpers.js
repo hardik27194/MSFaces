@@ -18,11 +18,16 @@ module.exports = {
         if (message) { body[message] = message; }
         res.status(code).json(body);
     },
-    fixProfileImagePath(Image, user) {
+    fixProfileImagePath: function (Image, user) {
         return Image.findOne({ _id: user.profileImage })
         .then(function (image) {
             user.profileImage = '/images/' + image._id + '.' + image.format;
             return user;
         });
+    },
+    getRandomInt: function (min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min)) + min;
     }
 };
