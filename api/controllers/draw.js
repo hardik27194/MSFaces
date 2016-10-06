@@ -29,7 +29,7 @@ module.exports = function (db) {
         post: function (req, res) {
 
             // Validate request
-            if (!req.body.imageId || !req.body.drawingData) {
+            if (!req.params.imageId || !req.body.data) {
                 respond(res, 400);
                 return;
             }
@@ -42,7 +42,7 @@ module.exports = function (db) {
             let Image = db.collection('images');
             let Drawing = db.collection('drawings');
 
-            Image.findOne({ _id: ObjectID(req.body.imageId) })
+            Image.findOne({ _id: ObjectID(req.params.imageId) })
             .then(function (image) {
                 if (!image) {
                     respond(res, 404);
@@ -52,7 +52,7 @@ module.exports = function (db) {
                     image,
                     User.findOne({ _id: image.forUser }),
                     Drawing.insertOne({
-                        data: req.body.drawingData,
+                        data: req.body.data,
                         score: getRandomInt(50, 100),
                         createdBy: req.user._id,
                         forUser: image.forUser,

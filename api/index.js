@@ -31,7 +31,7 @@ db.then(function (db) {
     app.post('/users', userController.post);
     app.get('/users/:alias', userController.auth, userController.get);
     app.get('/draw', userController.auth, drawController.get);
-    app.post('/draw', userController.auth, drawController.post);
+    app.post('/draw/:imageId', userController.auth, drawController.post);
     app.get('/leaderboard', userController.auth, leaderboardController.get);
     app.get('/collection', userController.auth, collectionController.get);
     app.post('/collection/seen', userController.auth, collectionController.postSeen);

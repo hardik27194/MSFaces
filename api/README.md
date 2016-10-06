@@ -44,12 +44,11 @@ Get an image to draw for.
 }
 ```
 
-### POST /draw?u=t-dawei
-Post a drawing.
+### POST /draw/imageId?u=t-dawei
+Post a drawing for an image.
 ```
 {
-    "imageId": <string>,
-    "drawingData": <drawing data blob>
+    "data": <drawing data blob>
 }
 ```
 ```
@@ -91,11 +90,10 @@ Start a guessing session.
 }
 ```
 
-### POST /guess/<session_id>?u=t-dawei
+### POST /guess/sessionId?u=t-dawei
 Submit answer for a guessing session.
 ```
 {
-    "sessionId": <string>,
     "choice": 3
 }
 ```
