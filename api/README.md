@@ -149,22 +149,18 @@ Get data for the leaderboard view.
 }
 ```
 
-### GET /collection?u=t-dawei
+### GET /collection?u=t-dawei&limit=12&offset=12
 Get data for the collection view.
 ```
 {
     "status": "OK",
     "result": {
-        "collected": [{
+        "users": [{
             "isNew": true,
             "profileImage": "relative/path/to/file",
             "firstName": "Da",
             "lastName": "Wei",
             "alias": "t-dawei"
-        }],
-        "notCollected": [{
-            "firstName": "M.",
-            "lastName": "L."
         }]
     }
 }
