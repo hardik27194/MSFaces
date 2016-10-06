@@ -23,7 +23,7 @@ module.exports = function (db) {
                 usersRevealedDict[user.id] = user.isNew;
             });
 
-            User.find({ _id: { $in: usersRevealedIds}, 'internalFlags.isAnonymous': false }).sort({ firstName: 1 }).skip(offset).limit(limit).toArray()
+            User.find({ _id: { $in: usersRevealedIds }, 'internalFlags.isAnonymous': false }).sort({ firstName: 1 }).skip(offset).limit(limit).toArray()
             .then(function (users) {
                 limit -= users.length;
                 return users.map((user) => {
@@ -74,33 +74,30 @@ module.exports = function (db) {
                 return;
             }
 
-            let changed = false;
-            req.user.stats.usersRevealed.forEach((user) => {
-                if (req.body.seen.indexOf(user.id.toString()) !== -1) {
-                    user.isNew = false;
-                    changed = true;
-                }
-            });
-
-            if (changed) {
-                let User = db.collection('users');
-                User.updateOne({
+            let User = db.collection('users');
+            User.find({ alias: { $in: req.body.seen }}).toArray()
+            .then(function (users) {
+                let userIds = users.map((user) => {
+                    return user._id.toString();
+                });
+                req.user.stats.usersRevealed.forEach((user) => {
+                    if (userIds.indexOf(user.id.toString()) !== -1) { user.isNew = false; }
+                });
+                return User.updateOne({
                     _id: req.user._id
                 }, {
                     $set: {
                         'stats.usersRevealed': req.user.stats.usersRevealed
                     }
-                })
-                .then(function (result) {
-                    respond(res, 200);
-                })
-                .catch(function (error) {
-                    winston.log('error', error);
-                    respond(res, 500);
                 });
-            } else {
+            })
+            .then(function (result) {
                 respond(res, 200);
-            }
+            })
+            .catch(function (error) {
+                winston.log('error', error);
+                respond(res, 500);
+            });
         }
     };
 };
