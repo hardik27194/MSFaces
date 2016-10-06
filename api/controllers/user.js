@@ -1,5 +1,6 @@
 'use strict';
 
+const NotFoundError = require('./helpers.js').NotFoundError;
 const Promise = require('bluebird');
 const fs = require('fs');
 const respond = require('./helpers.js').respond;
@@ -51,7 +52,7 @@ module.exports = function (db) {
                         body.lastName = user.info.lastName;
                         return user.images.profileImage;
                     }
-                    respond(res, 404);
+                    throw new NotFoundError();
                 });
             })
             .then(function (profileImage) {
@@ -65,6 +66,9 @@ module.exports = function (db) {
                         respond(res, 200, body);
                     });
                 }
+            })
+            .catch(NotFoundError, function (error) {
+                respond(res, 404);
             })
             .catch(function (error) {
                 winston.log('error', error);

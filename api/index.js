@@ -24,6 +24,7 @@ db.then(function (db) {
     // Initialize controllers
     let userController = require('./controllers/user.js')(db);
     let drawController = require('./controllers/draw.js')(db);
+    let guessController = require('./controllers/guess.js')(db);
     let leaderboardController = require('./controllers/leaderboard.js')(db);
     let collectionController = require('./controllers/collection.js')(db);
 
@@ -32,6 +33,8 @@ db.then(function (db) {
     app.get('/users/:alias', userController.auth, userController.get);
     app.get('/draw', userController.auth, drawController.get);
     app.post('/draw/:imageId', userController.auth, drawController.post);
+    app.get('/guess', userController.auth, guessController.get);
+    app.post('/guess/:sessionId', userController.auth, guessController.post);
     app.get('/leaderboard', userController.auth, leaderboardController.get);
     app.get('/collection', userController.auth, collectionController.get);
     app.post('/collection/seen', userController.auth, collectionController.postSeen);

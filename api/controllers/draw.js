@@ -1,5 +1,6 @@
 'use strict';
 
+const NotFoundError = require('./helpers.js').NotFoundError;
 const ObjectID = require('mongodb').ObjectID;
 const Promise = require('bluebird');
 const getRandomInt = require('./helpers.js').getRandomInt;
@@ -9,11 +10,15 @@ const winston = require('winston');
 module.exports = function (db) {
     return {
         get: function (req, res) {
+            let User = db.collection('users');
             let Image = db.collection('images');
 
-            Image.aggregate([{ $sample: { size: 1 }}]).toArray()
+            User.aggregate([{ $match: { _id: { $ne: req.user._id }}}, { $sample: { size: 1 }}]).toArray()
             .then(function (results) {
                 return results[0];
+            })
+            .then(function (user) {
+                return Image.findOne({ _id: user.images.imagesFor[getRandomInt(0, user.images.imagesFor.length)] });
             })
             .then(function (image) {
                 respond(res, 200, {
@@ -45,8 +50,7 @@ module.exports = function (db) {
             Image.findOne({ _id: ObjectID(req.params.imageId) })
             .then(function (image) {
                 if (!image) {
-                    respond(res, 404);
-                    return;
+                    throw new NotFoundError();
                 }
                 return Promise.all([
                     image,
@@ -62,7 +66,7 @@ module.exports = function (db) {
                 .spread(function (image, user, drawing) {
                     drawing = drawing.ops[0];
                     image.drawingsFor.push(drawing._id);
-                    user.stats.drawPts += drawing.score;
+                    req.user.stats.drawPts += drawing.score;
                     body.score = drawing.score;
                     user.images.drawingsFor.push(drawing._id);
                     return Promise.all([
@@ -77,8 +81,14 @@ module.exports = function (db) {
                             _id: user._id
                         }, {
                             $set: {
-                                'stats.drawPts': user.stats.drawPts,
                                 'images.drawingsFor': user.images.drawingsFor
+                            }
+                        }),
+                        User.updateOne({
+                            _id: req.user._id
+                        }, {
+                            $set: {
+                                'stats.drawPts': req.user.stats.drawPts
                             }
                         })
                     ]);
@@ -86,6 +96,9 @@ module.exports = function (db) {
             })
             .then(function (results) {
                 respond(res, 200, body);
+            })
+            .catch(NotFoundError, function (error) {
+                respond(res, 404);
             })
             .catch(function (error) {
                 winston.log('error', error);
