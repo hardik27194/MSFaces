@@ -98,7 +98,7 @@ db.then(function (db) {
                     stats: {
                         drawPts: 0,
                         guessPts: 0,
-                        users_revealed: []
+                        usersRevealed: []
                     },
                     images: {
                         profileImage: imageDict[row.alias],
@@ -149,6 +149,7 @@ db.then(function (db) {
     .then(function () {
         return Promise.all([
             User.createIndex({ 'alias': 1 }),
+            User.createIndex({ 'firstName': 1, '_id': 1 }),
             User.createIndex({ 'stats.drawPts': -1 }),
             User.createIndex({ 'stats.guessPts': -1 })
         ]);

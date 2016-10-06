@@ -3,15 +3,8 @@
 const Promise = require('bluebird');
 const config = require('../config.js');
 const respond = require('./helpers.js').respond;
+const fixProfileImagePath = require('./helpers.js').fixProfileImagePath;
 const winston = require('winston');
-
-function fixProfileImagePath(Image, user) {
-    return Image.findOne({ _id: user.profileImage })
-    .then(function (image) {
-        user.profileImage = '/images/' + image._id + '.' + image.format;
-        return user;
-    });
-}
 
 module.exports = function (db) {
     return {
@@ -76,4 +69,4 @@ module.exports = function (db) {
             });
         }
     };
-}
+};
