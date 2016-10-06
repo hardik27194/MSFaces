@@ -18,7 +18,10 @@ app.get('/ping', require('./controllers/ping.js'));
 db.then(function (db) {
 
     // Initialize controllers
-    let userController = require('./controllers/user.js');
+    let userController = require('./controllers/user.js')(db);
+
+    // Setup endpoints
+    app.get('/users/:alias', userController.requireAuth, userController.getUser);
 
     // Start listening to requests
     app.listen(config.port, function () {
