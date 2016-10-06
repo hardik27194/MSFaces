@@ -23,10 +23,12 @@ db.then(function (db) {
 
     // Initialize controllers
     let userController = require('./controllers/user.js')(db);
+    let leaderboardController = require('./controllers/leaderboard.js')(db);
 
     // Setup endpoints
-    app.get('/users/:alias', userController.requireAuth, userController.getUser);
-    app.post('/users', userController.postUser);
+    app.get('/users/:alias', userController.auth, userController.get);
+    app.post('/users', userController.post);
+    app.get('/leaderboard', userController.auth, leaderboardController.get);
 
     // Start listening to requests
     app.listen(config.port, function () {

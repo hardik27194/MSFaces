@@ -7,7 +7,7 @@ const winston = require('winston');
 
 module.exports = function (db) {
     return {
-        requireAuth: function (req, res, next) {
+        auth: function (req, res, next) {
             if (!req.query.u) {
                 respond(res, 401);
                 return;
@@ -27,12 +27,12 @@ module.exports = function (db) {
                 respond(res, 500);
             });
         },
-        getUser: function (req, res) {
+        get: function (req, res) {
             let body = {
                 firstName: null,
                 lastName: null,
                 profileImage: null
-            }
+            };
             new Promise(function (resolve, reject) {
                 if (req.params.alias === req.user.alias) {
                     body.firstName = req.user.info.firstName;
@@ -71,7 +71,7 @@ module.exports = function (db) {
                 respond(res, 500);
             });
         },
-        postUser: function (req, res) {
+        post: function (req, res) {
 
             // Validate request
             if (!req.body.alias || !req.body.profileImage.format || !req.body.profileImage.data) {
