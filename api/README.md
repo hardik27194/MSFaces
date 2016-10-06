@@ -141,7 +141,7 @@ Get data for the leaderboard view.
             "alias": "third_place_person",
             "pts": 32154
         }],
-        "my_rankings": {
+        "myRankings": {
             "draw": 123,
             "guess": 123
         }
