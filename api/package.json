@@ -1,0 +1,20 @@
+{
+  "name": "msfaces_api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "assert": "^1.4.1",
+    "bluebird": "^3.4.6",
+    "csv-parser": "^1.11.0",
+    "express": "^4.14.0",
+    "mongodb": "^2.2.10",
+    "winston": "^2.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node index"
+  },
+  "author": "Da Wei",
+  "license": "ISC"
+}
