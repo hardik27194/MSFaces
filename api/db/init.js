@@ -148,9 +148,9 @@ db.then(function (db) {
     // Create indices for better query performance
     .then(function () {
         return Promise.all([
-            User.createIndex({ "alias": 1 }),
-            User.createIndex({ "stats.drawPts": -1 }),
-            User.createIndex({ "stats.guessPts": -1 })
+            User.createIndex({ 'alias': 1 }),
+            User.createIndex({ 'stats.drawPts': -1 }),
+            User.createIndex({ 'stats.guessPts': -1 })
         ]);
     })
     .then(function () {

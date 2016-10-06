@@ -1,5 +1,7 @@
 'use strict';
 
+const Promise = require('bluebird');
+const fs = require('fs');
 const respond = require('./helpers.js').respond;
 const winston = require('winston');
 
@@ -63,6 +65,95 @@ module.exports = function (db) {
                         respond(res, 200, body);
                     });
                 }
+            })
+            .catch(function (error) {
+                winston.log('error', error);
+                respond(res, 500);
+            });
+        },
+        postUser: function (req, res) {
+
+            // Validate request
+            if (!req.body.alias || !req.body.profileImage.format || !req.body.profileImage.data) {
+                respond(res, 400);
+                return;
+            }
+
+            let User = db.collection('users');
+            let Image = db.collection('images');
+
+            Promise.all([
+                // If user doesn't exist, create a new user
+                User.findOne({ alias: req.body.alias })
+                .then(function (user) {
+                    if (user) {
+                        return user;
+                    } else {
+                        return User.insertOne({
+                            alias: req.body.alias,
+                            info: {
+                                firstName: null,
+                                lastName: null
+                            },
+                            stats: {
+                                drawPts: 0,
+                                guessPts: 0,
+                                users_revealed: []
+                            },
+                            images: {
+                                profileImage: null,
+                                imagesFor: [],
+                                drawingsFor: []
+                            },
+                            internalFlags: {
+                                drawingsQuizzed: {
+                                    all: [],
+                                    wrong: []
+                                },
+                                isAnonymous: true
+                            }
+                        })
+                        .then(function (result) {
+                            return result.ops[0];
+                        });
+                    }
+                }),
+                // Create image row
+                Image.insertOne({
+                    format: req.body.profileImage.format,
+                    originalFileName: null,
+                    forUser: null,
+                    drawingsFor: []
+                })
+                .then(function (result) {
+                    return result.ops[0];
+                })
+            ])
+            .spread(function (user, image) {
+                return Promise.all([
+                    // Update user row
+                    User.updateOne({
+                        _id: user._id
+                    }, {
+                        $set: {
+                            'images.profileImage': image._id,
+                            'images.imagesFor': user.images.imagesFor.concat([image._id])
+                        }
+                    }),
+                    // Update image row
+                    Image.updateOne({
+                        _id: image._id
+                    }, {
+                        $set: {
+                            forUser: user._id
+                        }
+                    }),
+                    // Save image file
+                    new Promise.promisify(fs.writeFile)('./public/images/' + image._id + '.' + image.format, new Buffer(req.body.profileImage.data, 'base64'))
+                ]);
+            })
+            .then(function (results) {
+                respond(res, 200);
             })
             .catch(function (error) {
                 winston.log('error', error);
