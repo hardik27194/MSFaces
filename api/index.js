@@ -31,6 +31,7 @@ db.then(function (db) {
     app.post('/users', userController.post);
     app.get('/leaderboard', userController.auth, leaderboardController.get);
     app.get('/collection', userController.auth, collectionController.get);
+    app.post('/collection/seen', userController.auth, collectionController.postSeen);
 
     // Start listening to requests
     app.listen(config.port, function () {

@@ -42,7 +42,7 @@ module.exports = function (db) {
             .then(function (users) {
                 if (limit === 0 ) { return users; }
                 offset = Math.max(0, offset - req.user.stats.usersRevealed.length);
-                return User.find({ _id: { $nin: usersRevealedIds.concat(req.user._id) }, 'internalFlags.isAnonymous': false }).sort({ firstName: 1 }).skip(offset).limit(limit).toArray()
+                return User.find({ _id: { $nin: usersRevealedIds.concat([req.user._id]) }, 'internalFlags.isAnonymous': false }).sort({ firstName: 1 }).skip(offset).limit(limit).toArray()
                 .then(function (extraUsers) {
                     return extraUsers.map((user) => {
                         return {
@@ -65,6 +65,42 @@ module.exports = function (db) {
                 winston.log('error', error);
                 respond(res, 500);
             });
+        },
+        postSeen: function (req, res) {
+
+            // Validate request
+            if (!req.body.seen || !Array.isArray(req.body.seen)) {
+                respond(res, 400);
+                return;
+            }
+
+            let changed = false;
+            req.user.stats.usersRevealed.forEach((user) => {
+                if (req.body.seen.indexOf(user.id.toString()) !== -1) {
+                    user.isNew = false;
+                    changed = true;
+                }
+            });
+
+            if (changed) {
+                let User = db.collection('users');
+                User.updateOne({
+                    _id: req.user._id
+                }, {
+                    $set: {
+                        'stats.usersRevealed': req.user.stats.usersRevealed
+                    }
+                })
+                .then(function (result) {
+                    respond(res, 200);
+                })
+                .catch(function (error) {
+                    winston.log('error', error);
+                    respond(res, 500);
+                });
+            } else {
+                respond(res, 200);
+            }
         }
     };
 };
