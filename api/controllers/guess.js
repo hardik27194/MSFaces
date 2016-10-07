@@ -23,22 +23,26 @@ module.exports = function (db) {
             };
 
             // Try to avoid previously quizzed items
-            Drawing.aggregate([{ $match: { _id: { $nin: req.user.internalFlags.drawingsQuizzed.all }}}, { $sample: { size: 1 }}]).toArray()
-            .then(function (results) {
-                if (results.length === 0) {
-                    // Used up inventory, try previously wronged quizzes
-                    return Drawing.aggregate([{ $match: { _id: { $in: req.user.internalFlags.drawingsQuizzed.wrong }}}, { $sample: { size: 1 }}]).toArray()
-                    .then(function (results) {
-                        if (results.length === 0) {
-                            // No luck, just try something
-                            return Drawing.aggregate([{ $sample: { size: 1 }}]).toArray();
-                        } else {
-                            return results;
-                        }
-                    });
-                } else {
-                    return results;
-                }
+            new Promise(function (resolve, reject) {
+                Drawing.aggregate([{ $match: { _id: { $nin: req.user.internalFlags.drawingsQuizzed.all }}}, { $sample: { size: 1 }}]).toArray(function (err, results) {
+                    if (err) reject(err);
+                    if (results.length === 0) {
+                        // Used up inventory, try previously wronged quizzes
+                        Drawing.aggregate([{ $match: { _id: { $in: req.user.internalFlags.drawingsQuizzed.wrong }}}, { $sample: { size: 1 }}]).toArray(function (err, results) {
+                            if (err) reject(err);
+                            if (results.length === 0) {
+                                // No luck, just try something
+                                Drawing.aggregate([{ $sample: { size: 1 }}]).toArray(function (err, results) {
+                                    if (err) reject(err); else resolve(results);
+                                });
+                            } else {
+                                resolve(results);
+                            }
+                        });
+                    } else {
+                        resolve(results);
+                    }
+                });
             })
             .then(function (results) {
                 if (results.length === 0) {
@@ -114,7 +118,11 @@ module.exports = function (db) {
             let Drawing = db.collection('drawings');
             let QuizSession = db.collection('quizSessions');
 
-            QuizSession.findOne({ _id: ObjectID(req.params.sessionId) })
+            new Promise(function (resolve, reject) {
+                QuizSession.findOne({ _id: ObjectID(req.params.sessionId) }, function (err, quizSession) {
+                    if (err) reject(err); else resolve(quizSession);
+                });
+            })
             .then(function (quizSession) {
                 if (!quizSession) {
                     throw new NotFoundError();

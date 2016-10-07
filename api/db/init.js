@@ -12,9 +12,7 @@ const getFileExtension = /(?:\.([^.]+))?$/;
 function cleanDirectorySync(directoryPath) {
     let filesToRemove = fs.readdirSync(directoryPath);
     filesToRemove.forEach(function (fileName) {
-        if (fileName !== '.gitignore') {
-            fs.unlinkSync(directoryPath + fileName);
-        }
+        if (fileName !== '.gitignore') fs.unlinkSync(directoryPath + fileName);
     });
 }
 
@@ -39,9 +37,7 @@ db.then(function (db) {
     ])
     .catch(function (error) {
         // Ignore ns not found error
-        if (error.code === 26) {
-            return;
-        }
+        if (error.code === 26) return;
     })
     .then(function (results) {
         winston.log('info', 'DB cleanup completed.');

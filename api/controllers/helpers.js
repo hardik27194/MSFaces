@@ -9,11 +9,21 @@ let codeToStatus = {
     500: 'Internal Server Error'
 };
 
-function BadRequestError() {}
+function BadRequestError(message) {
+    this.message = message;
+    this.name = 'BadRequestError';
+    Error.captureStackTrace(this, BadRequestError);
+}
 BadRequestError.prototype = Object.create(Error.prototype);
+BadRequestError.prototype.constructor = BadRequestError;
 
-function NotFoundError() {}
+function NotFoundError(message) {
+    this.message = message;
+    this.name = 'NotFoundError';
+    Error.captureStackTrace(this, NotFoundError);
+}
 NotFoundError.prototype = Object.create(Error.prototype);
+NotFoundError.prototype.constructor = NotFoundError;
 
 module.exports = {
     BadRequestError: BadRequestError,
@@ -23,7 +33,7 @@ module.exports = {
             status: codeToStatus[code],
             result: result || {},
         }
-        if (message) { body[message] = message; }
+        if (message) body[message] = message;
         res.status(code).json(body);
     },
     fixProfileImagePath: function (Image, user) {

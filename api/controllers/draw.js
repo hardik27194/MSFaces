@@ -49,11 +49,13 @@ module.exports = function (db) {
             let Image = db.collection('images');
             let Drawing = db.collection('drawings');
 
-            Image.findOne({ _id: ObjectID(req.params.imageId) })
+            new Promise(function (resolve, reject) {
+                Image.findOne({ _id: ObjectID(req.params.imageId) }, function (err, image) {
+                    if (err) reject(err); else resolve(image);
+                });
+            })
             .then(function (image) {
-                if (!image) {
-                    throw new NotFoundError();
-                }
+                if (!image) throw new NotFoundError();
                 return Promise.all([
                     image,
                     User.findOne({ _id: image.forUser }),

@@ -40,7 +40,7 @@ module.exports = function (db) {
                 return Promise.all(users.map(fixProfileImagePath.bind(this, Image)));
             })
             .then(function (users) {
-                if (limit === 0 ) { return users; }
+                if (limit === 0 ) return users;
                 offset = Math.max(0, offset - req.user.stats.usersRevealed.length);
                 return User.find({ _id: { $nin: usersRevealedIds.concat([req.user._id]) }, 'internalFlags.isAnonymous': false }).sort({ firstName: 1 }).skip(offset).limit(limit).toArray()
                 .then(function (extraUsers) {
@@ -81,7 +81,7 @@ module.exports = function (db) {
                     return user._id.toString();
                 });
                 req.user.stats.usersRevealed.forEach((user) => {
-                    if (userIds.indexOf(user.id.toString()) !== -1) { user.isNew = false; }
+                    if (userIds.indexOf(user.id.toString()) !== -1) user.isNew = false;
                 });
                 return User.updateOne({
                     _id: req.user._id

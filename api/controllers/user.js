@@ -60,9 +60,7 @@ module.exports = function (db) {
                     let Image = db.collection('images');
                     return Image.findOne({ _id: profileImage })
                     .then(function (image) {
-                        if (image) {
-                            body.profileImage = '/images/' + image._id + '.' + image.format;
-                        }
+                        if (image) body.profileImage = '/images/' + image._id + '.' + image.format;
                         respond(res, 200, body);
                     });
                 }
