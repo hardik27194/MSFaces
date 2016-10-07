@@ -163,7 +163,9 @@ Get data for the collection view.
             "firstName": "Da",
             "lastName": "Wei",
             "alias": "t-dawei"
-        }]
+        }],
+        "revealed": 123,
+        "total": 999
     }
 }
 ```

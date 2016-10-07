@@ -13,7 +13,7 @@ module.exports = function (db) {
             let User = db.collection('users');
             let Image = db.collection('images');
 
-            User.aggregate([{ $match: { _id: { $ne: req.user._id }}}, { $sample: { size: 1 }}]).toArray()
+            User.aggregate([{ $match: { _id: { $ne: req.user._id }, 'internalFlags.isAnonymous': false }}, { $sample: { size: 1 }}]).toArray()
             .then(function (results) {
                 return results[0];
             })

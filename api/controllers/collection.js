@@ -23,6 +23,12 @@ module.exports = function (db) {
                 usersRevealedDict[user.id] = user.isNew;
             });
 
+            let body = {
+                users: null,
+                revealed: 0,
+                total: 0
+            };
+
             User.find({ _id: { $in: usersRevealedIds }, 'internalFlags.isAnonymous': false }).sort({ firstName: 1 }).skip(offset).limit(limit).toArray()
             .then(function (users) {
                 limit -= users.length;
@@ -59,7 +65,19 @@ module.exports = function (db) {
                 });
             })
             .then(function (users) {
-                respond(res, 200, { users: users });
+                body.users = users;
+                return Promise.all([
+                    User.count({ _id: { $in: usersRevealedIds }, 'internalFlags.isAnonymous': false }),
+                    User.count({ _id: { $ne: req.user._id }, 'internalFlags.isAnonymous': false })
+                ])
+                .spread(function (revealed, total) {
+                    body.revealed = revealed;
+                    body.total = total;
+                    return;
+                });
+            })
+            .then(function (result) {
+                respond(res, 200, body);
             })
             .catch(function (error) {
                 winston.log('error', error);
