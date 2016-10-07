@@ -54,7 +54,7 @@ module.exports = function (db) {
             .then(function (drawing) {
                 body.drawing = {
                     data: drawing.data,
-                    faceType: drawings.faceType
+                    faceType: drawing.faceType
                 };
                 return Promise.all([
                     User.findOne({ _id: drawing.forUser }),
