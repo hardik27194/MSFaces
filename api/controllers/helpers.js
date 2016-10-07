@@ -10,10 +10,10 @@ let codeToStatus = {
 };
 
 function BadRequestError() {}
-BadRequestError.prototype = Error.prototype;
+BadRequestError.prototype = Object.create(Error.prototype);
 
 function NotFoundError() {}
-NotFoundError.prototype = Error.prototype;
+NotFoundError.prototype = Object.create(Error.prototype);
 
 module.exports = {
     BadRequestError: BadRequestError,

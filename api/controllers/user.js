@@ -78,7 +78,10 @@ module.exports = function (db) {
         post: function (req, res) {
 
             // Validate request
-            if (!req.body.alias || !req.body.profileImage.format || !req.body.profileImage.data) {
+            if (typeof req.body.alias !== 'string' || !req.body.alias ||
+                typeof req.body.profileImage !== 'object' ||
+                typeof req.body.profileImage.format !== 'string' || !req.body.profileImage.format ||
+                typeof req.body.profileImage.data !== 'string' || !req.body.profileImage.data) {
                 respond(res, 400);
                 return;
             }

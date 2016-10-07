@@ -34,7 +34,9 @@ module.exports = function (db) {
         post: function (req, res) {
 
             // Validate request
-            if (!req.params.imageId || !req.body.data) {
+            if (!req.params.imageId ||
+                typeof req.body.data !== 'string'|| !req.body.data ||
+                typeof req.body.faceType !== 'number' || req.body.faceType < 0) {
                 respond(res, 400);
                 return;
             }
@@ -57,6 +59,7 @@ module.exports = function (db) {
                     User.findOne({ _id: image.forUser }),
                     Drawing.insertOne({
                         data: req.body.data,
+                        faceType: req.body.faceType,
                         score: getRandomInt(50, 100),
                         createdBy: req.user._id,
                         forUser: image.forUser,

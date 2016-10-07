@@ -48,7 +48,8 @@ Get an image to draw for.
 Post a drawing for an image.
 ```
 {
-    "data": <drawing data blob>
+    "data": <drawing data string>,
+    "faceType": 1
 }
 ```
 ```
@@ -68,7 +69,10 @@ Start a guessing session.
     "status": "OK",
     "result": {
         "sessionId": <string>,
-        "drawingData": <drawing data blob>,
+        "drawing": {
+            "data": <drawing data string>,
+            "faceType": 1
+        },
         "choices": [{
             "alias": "t-dawei",
             "firstName": "Da",

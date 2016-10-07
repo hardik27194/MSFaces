@@ -18,7 +18,7 @@ module.exports = function (db) {
 
             let body = {
                 sessionId: null,
-                drawingData: null,
+                drawing: null,
                 choices: []
             };
 
@@ -48,7 +48,10 @@ module.exports = function (db) {
                 }
             })
             .then(function (drawing) {
-                body.drawingData = drawing.data;
+                body.drawing = {
+                    data: drawing.data,
+                    faceType: drawings.faceType
+                };
                 return Promise.all([
                     User.findOne({ _id: drawing.forUser }),
                     User.aggregate([{ $match: { _id: { $ne: drawing.forUser }, 'internalFlags.isAnonymous': false }}, { $sample: { size: config.numGuessChoices - 1 }}]).toArray()
