@@ -14,7 +14,7 @@ let app = express();
 app.use(express.static(path.join(__dirname, '/public')));
 
 // We only accept JSON input
-app.use(bodyParser.json());
+app.use(bodyParser.json({ 'limit': '10mb' }));
 
 app.get('/ping', require('./controllers/ping.js'));
 
