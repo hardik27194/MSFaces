@@ -106,6 +106,12 @@ Submit answer for a guessing session.
     "status": "OK",
     "result": {
         "isRightAnswer": true,
+        "rightUser": {
+            "alias": "t-dawei",
+            "firstName": "Da",
+            "lastName": "Wei",
+            "profileImage": "/relative/path/to/file"
+        }
         "score": 75
     }
 }

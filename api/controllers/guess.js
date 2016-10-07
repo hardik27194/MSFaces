@@ -5,6 +5,7 @@ const NotFoundError = require('./helpers.js').NotFoundError;
 const ObjectID = require('mongodb').ObjectID;
 const Promise = require('bluebird');
 const config = require('../config.js');
+const fixProfileImagePath = require('./helpers.js').fixProfileImagePath;
 const respond = require('./helpers.js').respond;
 const shuffle = require('./helpers.js').shuffle;
 const winston = require('winston');
@@ -111,10 +112,17 @@ module.exports = function (db) {
 
             let body = {
                 isRightAnswer: false,
+                rightUser: {
+                    alias: null,
+                    firstName: null,
+                    lastName: null,
+                    profileImage: null
+                },
                 score: 0
             };
 
             let User = db.collection('users');
+            let Image = db.collection('images');
             let Drawing = db.collection('drawings');
             let QuizSession = db.collection('quizSessions');
 
@@ -157,6 +165,16 @@ module.exports = function (db) {
                     }
 
                     return Promise.all([
+                        User.findOne({
+                            _id: quizSession.choices[quizSession.correctAnswer]
+                        })
+                        .then(function (user) {
+                            body.rightUser.alias = user.alias;
+                            body.rightUser.firstName = user.info.firstName;
+                            body.rightUser.lastName = user.info.lastName;
+                            body.rightUser.profileImage = user.images.profileImage;
+                            return fixProfileImagePath(Image, body.rightUser);
+                        }),
                         User.updateOne({
                             _id: req.user._id
                         }, {
