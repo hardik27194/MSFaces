@@ -26,7 +26,7 @@ module.exports = function (db) {
                 .then(function (users) {
                     return users.map((user) => {
                         return {
-                            profileImage: user.images.profileImage,
+                            profileImage: user.images.profileImage || '/unknown.png',
                             alias: user.alias,
                             pts: user.stats.drawPts
                         };
@@ -36,7 +36,7 @@ module.exports = function (db) {
                 .then(function (users) {
                     return users.map((user) => {
                         return {
-                            profileImage: user.images.profileImage,
+                            profileImage: user.images.profileImage || '/unknown.png',
                             alias: user.alias,
                             pts: user.stats.guessPts
                         };

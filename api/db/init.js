@@ -97,8 +97,8 @@ db.then(function (db) {
                         usersRevealed: []
                     },
                     images: {
-                        profileImage: imageDict[row.alias],
-                        imagesFor: [imageDict[row.alias]],
+                        profileImage: imageDict[row.alias] || null,
+                        imagesFor: imageDict[row.alias] ? [imageDict[row.alias]] : [],
                         drawingsFor: []
                     },
                     internalFlags: {
@@ -114,13 +114,13 @@ db.then(function (db) {
             .then(function (userRows) {
                 winston.log('info', 'User rows created.');
                 return Promise.all(userRows.ops.map(function (row) {
-                    return Image.updateOne({
+                    return row.images.profileImage ? Image.updateOne({
                         _id: row.images.profileImage
                     }, {
                         $set: {
                             forUser: row._id
                         }
-                    });
+                    }) : null;
                 }))
                 .then(function (results) {
                     winston.log('info', 'Image rows updated.');

@@ -37,11 +37,11 @@ module.exports = {
         res.status(code).json(body);
     },
     fixProfileImagePath: function (Image, user) {
-        return Image.findOne({ _id: user.profileImage })
+        return user.profileImage !== '/unknown.png' ? Image.findOne({ _id: user.profileImage })
         .then(function (image) {
             user.profileImage = '/images/' + image._id + '.' + image.format;
             return user;
-        });
+        }) : user;
     },
     getRandomInt: function (min, max) {
         min = Math.ceil(min);

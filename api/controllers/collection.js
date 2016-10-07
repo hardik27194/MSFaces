@@ -35,7 +35,7 @@ module.exports = function (db) {
                 return users.map((user) => {
                     return {
                         isNew: usersRevealedDict[user._id],
-                        profileImage: user.images.profileImage,
+                        profileImage: user.images.profileImage || '/unknown.png',
                         firstName: user.info.firstName,
                         lastName: user.info.lastName,
                         alias: user.alias

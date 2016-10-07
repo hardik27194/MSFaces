@@ -40,20 +40,24 @@ module.exports = function (db) {
                     body.lastName = req.user.info.lastName;
                     resolve(req.user.images.profileImage);
                 } else {
-                    resolve(null);
+                    resolve(undefined);
                 }
             })
             .then(function (profileImage) {
-                let User = db.collection('users');
-                return profileImage || User.findOne({ alias: req.params.alias })
-                .then(function (user) {
-                    if (user) {
-                        body.firstName = user.info.firstName;
-                        body.lastName = user.info.lastName;
-                        return user.images.profileImage;
-                    }
-                    throw new NotFoundError();
-                });
+                if (profileImage === undefined) {
+                    let User = db.collection('users');
+                    return User.findOne({ alias: req.params.alias })
+                    .then(function (user) {
+                        if (user) {
+                            body.firstName = user.info.firstName;
+                            body.lastName = user.info.lastName;
+                            return user.images.profileImage;
+                        }
+                        throw new NotFoundError();
+                    });
+                } else {
+                    return profileImage;
+                }
             })
             .then(function (profileImage) {
                 if (profileImage) {
@@ -61,9 +65,15 @@ module.exports = function (db) {
                     return Image.findOne({ _id: profileImage })
                     .then(function (image) {
                         if (image) body.profileImage = '/images/' + image._id + '.' + image.format;
-                        respond(res, 200, body);
+                        return;
                     });
+                } else {
+                    body.profileImage = '/unknown.png';
+                    return;
                 }
+            })
+            .then(function (result) {
+                respond(res, 200, body);
             })
             .catch(NotFoundError, function (error) {
                 respond(res, 404);
