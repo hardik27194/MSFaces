@@ -10,4 +10,6 @@
 
 @interface QuizViewController : UIViewController
 
+@property (copy) UIImage *profileImage;
+
 @end

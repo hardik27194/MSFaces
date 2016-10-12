@@ -25,6 +25,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ACEDrawingLabelView.h"
+#import "Line.h"
 
 #define ACEDrawingViewVersion   2.0.0
 
@@ -50,6 +51,7 @@ typedef NS_ENUM(NSUInteger, ACEDrawingMode) {
 
 @interface ACEDrawingView : UIView<ACEDrawingLabelViewDelegate>
 
+@property (nonatomic, strong) NSMutableArray *pathArray;
 @property (nonatomic, assign) ACEDrawingToolType drawTool;
 @property (nonatomic, strong) id<ACEDrawingTool> customDrawTool;
 @property (nonatomic, assign) id<ACEDrawingViewDelegate> delegate;

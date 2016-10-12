@@ -14,6 +14,7 @@
 {
     [super awakeFromNib];
     self.imageView.layer.cornerRadius = 35;
+    self.imageView.clipsToBounds = YES;
 }
 
 - (id)init
@@ -21,6 +22,7 @@
     self = [super init];
     if (self) {
         self.imageView.layer.cornerRadius = 35;
+        self.imageView.clipsToBounds = YES;
     }
     return self;
 }

@@ -10,4 +10,7 @@
 
 @interface RankViewController : UIViewController
 
+@property (copy) UIImage *profileImage;
+
+
 @end

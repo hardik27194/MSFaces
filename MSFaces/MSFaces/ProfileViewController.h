@@ -10,4 +10,7 @@
 
 @interface ProfileViewController : UIViewController
 
+@property (copy) UIImage *profileImage;
+@property (nonatomic, strong) NSArray *users;
+
 @end

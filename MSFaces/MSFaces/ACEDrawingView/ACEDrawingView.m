@@ -44,8 +44,6 @@
     CGPoint previousPoint2;
 }
 
-@property (nonatomic, strong) NSMutableArray *pathArray;
-
 @property (nonatomic, strong) NSMutableArray *redoStates;
 @property (nonatomic, strong) NSMutableArray *undoStates;
 

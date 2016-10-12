@@ -40,7 +40,7 @@ CGPoint midPoint(CGPoint p1, CGPoint p2)
 #pragma mark - ACEDrawingPenTool
 
 @implementation ACEDrawingPenTool
-
+@synthesize path = _path;
 @synthesize lineColor = _lineColor;
 @synthesize lineAlpha = _lineAlpha;
 
@@ -49,7 +49,7 @@ CGPoint midPoint(CGPoint p1, CGPoint p2)
     self = [super init];
     if (self != nil) {
         self.lineCapStyle = kCGLineCapRound;
-        path = CGPathCreateMutable();
+        _path = CGPathCreateMutable();
     }
     return self;
 }
@@ -73,7 +73,7 @@ CGPoint midPoint(CGPoint p1, CGPoint p2)
     CGPathAddQuadCurveToPoint(subpath, NULL, p1Point.x, p1Point.y, mid2.x, mid2.y);
     CGRect bounds = CGPathGetBoundingBox(subpath);
     
-    CGPathAddPath(path, NULL, subpath);
+    CGPathAddPath(_path, NULL, subpath);
     CGPathRelease(subpath);
     
     return bounds;
@@ -83,7 +83,7 @@ CGPoint midPoint(CGPoint p1, CGPoint p2)
 {
     CGContextRef context = UIGraphicsGetCurrentContext();
     
-	CGContextAddPath(context, path);
+	CGContextAddPath(context, _path);
     CGContextSetLineCap(context, kCGLineCapRound);
     CGContextSetLineWidth(context, self.lineWidth);
     CGContextSetStrokeColorWithColor(context, self.lineColor.CGColor);
@@ -99,7 +99,7 @@ CGPoint midPoint(CGPoint p1, CGPoint p2)
 
 - (void)dealloc
 {
-    CGPathRelease(path);
+    CGPathRelease(_path);
     self.lineColor = nil;
     #if !ACE_HAS_ARC
     [super dealloc];
@@ -118,7 +118,7 @@ CGPoint midPoint(CGPoint p1, CGPoint p2)
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSaveGState(context);
 
-	CGContextAddPath(context, path);
+	CGContextAddPath(context, self.path);
     CGContextSetLineCap(context, kCGLineCapRound);
     CGContextSetLineWidth(context, self.lineWidth);
     CGContextSetBlendMode(context, kCGBlendModeClear);
